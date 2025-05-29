@@ -16,6 +16,7 @@ import com.example.deliveryapp.screens.AdminCreateCategoryScreen
 import com.example.deliveryapp.screens.AdminProductsScreen
 import com.example.deliveryapp.screens.AuthLoginScreen
 import com.example.deliveryapp.screens.AuthRegisterScreen
+import com.example.deliveryapp.screens.ClientProductDetailScreen
 import com.example.deliveryapp.screens.ProfileScreen
 import com.example.deliveryapp.screens.RolesScreen
 import com.example.deliveryapp.ui.theme.DeliveryAppTheme
@@ -27,7 +28,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             DeliveryAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    AdminProductsScreen()
+                    ClientProductDetailScreen()
                 }
             }
         }

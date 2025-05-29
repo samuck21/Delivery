@@ -129,29 +129,85 @@ fun AdminProductsScreenContent(paddingValues: PaddingValues){
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 10.dp
                 ),
-                modifier = Modifier.weight(1f).height(200.dp).padding(start = 5.dp)
+                modifier = Modifier.weight(1f).height(200.dp).padding(end = 5.dp)
 
             ) {
                 Box(modifier = Modifier
                     .fillMaxSize()
-                    ,
-                    contentAlignment = Alignment.Center
+
                 ){
                     Image(
-                        painter = painterResource(com.example.deliveryapp.R.drawable.restauran),
+                        painter = painterResource(com.example.deliveryapp.R.drawable.pizzapepperoni),
                         contentDescription = "",
                         contentScale = ContentScale.Crop,
                         modifier = Modifier.fillMaxSize()
                     )
                     Text(
-                        text = "CARNES",
-                        modifier = Modifier.fillMaxWidth(),
+                        text = "PIZZA",
+                        modifier = Modifier.align(Alignment.TopStart).padding(10.dp),
                         fontWeight = FontWeight.Bold,
                         textAlign = TextAlign.Center,
                         fontSize = 20.sp,
                         color = Color.White
-
                     )
+                    Text(
+                        text = "3000.34$",
+                        modifier = Modifier.align(Alignment.BottomStart).padding(10.dp),
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                        fontSize = 20.sp,
+                        color = Color.White
+                    )
+                    Icon(
+                        imageVector = Icons.Default.KeyboardArrowDown,
+                        contentDescription = "",
+                        modifier = Modifier
+                            .align(Alignment.BottomEnd)
+                            .size(40.dp),
+                        tint = Color.Black
+                    )
+                    Column (modifier = Modifier.align(Alignment.TopEnd)) {
+                        Box(modifier = Modifier
+                            .background(Color.Transparent)
+                            .size(50.dp)
+                            .padding(10.dp)
+                            .clip(shape = CircleShape)
+                        ){
+                            Box(modifier = Modifier
+                                .fillMaxSize()
+                                .background(Color.Green)){
+                                Icon(
+                                    imageVector = Icons.Default.Edit,
+                                    contentDescription = "",
+                                    tint = Color.Black,
+                                    modifier = Modifier.size(30.dp)
+                                )
+                            }
+
+
+                        }
+                        Box(modifier = Modifier
+                            .background(Color.Transparent)
+                            .size(50.dp)
+                            .padding(10.dp)
+                            .clip(shape = CircleShape)
+                        ){
+                            Box(modifier = Modifier
+                                .fillMaxSize()
+                                .background(Color.Red)){
+                                Icon(
+                                    imageVector = Icons.Default.Delete,
+                                    contentDescription = "",
+                                    tint = Color.Black,
+                                    modifier = Modifier.size(30.dp)
+                                )
+                            }
+
+
+                        }
+                    }
+
+
                 }
             }
 
