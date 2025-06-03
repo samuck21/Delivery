@@ -57,6 +57,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     //Navigation Compose
-
     implementation("androidx.navigation:navigation-compose:2.9.0")
+    // Bottom Navigation
+    implementation("androidx.compose.material:material:1.8.1")
 }

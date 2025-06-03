@@ -39,7 +39,7 @@ import com.example.deliveryapp.presentation.navigation.screen.AuthScreen
 import com.example.deliveryapp.presentation.navigation.screen.RolesScreen
 
 @Composable
-fun AuthRegisterScreenContent(paddingValues: PaddingValues,navController: NavHostController) {
+fun AuthRegisterScreenContent(paddingValues: PaddingValues, navController: NavHostController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     Box(modifier = Modifier.fillMaxSize()) {
@@ -52,7 +52,9 @@ fun AuthRegisterScreenContent(paddingValues: PaddingValues,navController: NavHos
     }
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Card(
-            Modifier.padding(20.dp).height(690.dp),
+            Modifier
+                .padding(20.dp)
+                .height(690.dp),
             colors = CardDefaults.cardColors(
                 containerColor = Color.White
             )
@@ -76,37 +78,49 @@ fun AuthRegisterScreenContent(paddingValues: PaddingValues,navController: NavHos
                     value = email,
                     onValueChange = { email = it },
                     label = { Text("Name") },
-                    modifier = Modifier.padding(start = 20.dp, end = 20.dp).fillMaxWidth()
+                    modifier = Modifier
+                        .padding(start = 20.dp, end = 20.dp)
+                        .fillMaxWidth()
                 )
                 OutlinedTextField(
                     value = password,
                     onValueChange = { password = it },
                     label = { Text("Lastname") },
-                    modifier = Modifier.padding(start = 20.dp, end = 20.dp).fillMaxWidth()
+                    modifier = Modifier
+                        .padding(start = 20.dp, end = 20.dp)
+                        .fillMaxWidth()
                 )
                 OutlinedTextField(
                     value = email,
                     onValueChange = { email = it },
                     label = { Text("Email") },
-                    modifier = Modifier.padding(start = 20.dp, end = 20.dp).fillMaxWidth()
+                    modifier = Modifier
+                        .padding(start = 20.dp, end = 20.dp)
+                        .fillMaxWidth()
                 )
                 OutlinedTextField(
                     value = email,
                     onValueChange = { email = it },
                     label = { Text("Phone") },
-                    modifier = Modifier.padding(start = 20.dp, end = 20.dp).fillMaxWidth()
+                    modifier = Modifier
+                        .padding(start = 20.dp, end = 20.dp)
+                        .fillMaxWidth()
                 )
                 OutlinedTextField(
                     value = email,
                     onValueChange = { email = it },
                     label = { Text("Password") },
-                    modifier = Modifier.padding(start = 20.dp, end = 20.dp).fillMaxWidth()
+                    modifier = Modifier
+                        .padding(start = 20.dp, end = 20.dp)
+                        .fillMaxWidth()
                 )
                 OutlinedTextField(
                     value = email,
                     onValueChange = { email = it },
                     label = { Text("Confirm password") },
-                    modifier = Modifier.padding(start = 20.dp, end = 20.dp).fillMaxWidth()
+                    modifier = Modifier
+                        .padding(start = 20.dp, end = 20.dp)
+                        .fillMaxWidth()
                 )
                 Button(
                     shape = RoundedCornerShape(4.dp),
@@ -117,7 +131,9 @@ fun AuthRegisterScreenContent(paddingValues: PaddingValues,navController: NavHos
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color.Green
                     ),
-                    modifier = Modifier.padding(20.dp).fillMaxWidth()
+                    modifier = Modifier
+                        .padding(20.dp)
+                        .fillMaxWidth()
                 ) {
                     Text("INICIAR SESION")
                 }
@@ -126,7 +142,7 @@ fun AuthRegisterScreenContent(paddingValues: PaddingValues,navController: NavHos
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(70.dp)
-                        .clickable{
+                        .clickable {
                             navController.navigate(route = AuthScreen.Login.route)
                         },
                     contentAlignment = Alignment.Center

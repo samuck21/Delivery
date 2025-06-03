@@ -24,41 +24,42 @@ import androidx.compose.ui.unit.sp
 import com.example.deliveryapp.R
 
 @Composable
-fun AdminCategoryScreenContent(paddingValues: PaddingValues){
+fun AdminCategoryScreenContent(paddingValues: PaddingValues) {
 
     Column(modifier = Modifier.padding(20.dp)) {
-            ElevatedCard(
-               elevation = CardDefaults.cardElevation(
-                   defaultElevation = 10.dp
-               ),
-                modifier = Modifier.fillMaxWidth().height(200.dp)
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 10.dp
+            ),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp)
 
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize(),
+                contentAlignment = Alignment.Center
             ) {
-                Box(modifier = Modifier
-                    .fillMaxSize()
-                    ,
-                    contentAlignment = Alignment.Center
-                ){
-                    Image(
-                        painter = painterResource(R.drawable.restauran),
-                        contentDescription = "",
-                        contentScale = ContentScale.Crop,
-                        modifier = Modifier.fillMaxSize()
-                    )
-                    Text(
-                        text = "CARNES",
-                        modifier = Modifier.fillMaxWidth(),
-                        fontWeight = FontWeight.Bold,
-                        textAlign = TextAlign.Center,
-                        fontSize = 20.sp,
-                        color = Color.White
+                Image(
+                    painter = painterResource(R.drawable.restauran),
+                    contentDescription = "",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier.fillMaxSize()
+                )
+                Text(
+                    text = "CARNES",
+                    modifier = Modifier.fillMaxWidth(),
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
+                    fontSize = 20.sp,
+                    color = Color.White
 
-                    )
-                }
-
-
-
+                )
             }
+
+
+        }
 
 
     }

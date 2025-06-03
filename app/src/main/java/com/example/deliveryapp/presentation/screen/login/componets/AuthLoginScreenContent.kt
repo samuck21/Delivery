@@ -39,10 +39,10 @@ import com.example.deliveryapp.presentation.navigation.screen.AuthScreen
 import com.example.deliveryapp.presentation.navigation.screen.RolesScreen
 
 @Composable
-fun AuthLoginScreenContent(paddingValues: PaddingValues,navController: NavHostController){
-  var email by remember { mutableStateOf("") }
+fun AuthLoginScreenContent(paddingValues: PaddingValues, navController: NavHostController) {
+    var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-    Box (modifier = Modifier.fillMaxSize()){
+    Box(modifier = Modifier.fillMaxSize()) {
         Image(
             painter = painterResource(id = R.drawable.background),
             contentDescription = "",
@@ -50,14 +50,17 @@ fun AuthLoginScreenContent(paddingValues: PaddingValues,navController: NavHostCo
             modifier = Modifier.fillMaxSize()
         )
     }
-    Box(modifier = Modifier.fillMaxSize(),contentAlignment = Alignment.Center) {
-        Card (Modifier.padding(20.dp).height(440.dp),
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Card(
+            Modifier
+                .padding(20.dp)
+                .height(440.dp),
             colors = CardDefaults.cardColors(
                 containerColor = Color.White
             )
 
         ) {
-            Column(modifier = Modifier.padding(paddingValues)){
+            Column(modifier = Modifier.padding(paddingValues)) {
                 Text(
                     text = "Login",
                     fontWeight = FontWeight.Bold,
@@ -73,15 +76,19 @@ fun AuthLoginScreenContent(paddingValues: PaddingValues,navController: NavHostCo
 
                 OutlinedTextField(
                     value = email,
-                    onValueChange = {email= it},
-                    label = {Text("Email")},
-                    modifier = Modifier.padding(start = 20.dp, end = 20.dp).fillMaxWidth()
+                    onValueChange = { email = it },
+                    label = { Text("Email") },
+                    modifier = Modifier
+                        .padding(start = 20.dp, end = 20.dp)
+                        .fillMaxWidth()
                 )
                 OutlinedTextField(
                     value = password,
-                    onValueChange = {password= it},
-                    label = {Text("Password")},
-                    modifier = Modifier.padding(start = 20.dp, end = 20.dp).fillMaxWidth()
+                    onValueChange = { password = it },
+                    label = { Text("Password") },
+                    modifier = Modifier
+                        .padding(start = 20.dp, end = 20.dp)
+                        .fillMaxWidth()
                 )
                 Button(
                     shape = RoundedCornerShape(4.dp),
@@ -91,8 +98,10 @@ fun AuthLoginScreenContent(paddingValues: PaddingValues,navController: NavHostCo
                     },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color.Green
-                    ) ,
-                    modifier = Modifier.padding(20.dp).fillMaxWidth()
+                    ),
+                    modifier = Modifier
+                        .padding(20.dp)
+                        .fillMaxWidth()
                 ) {
                     Text("INICIAR SESION")
                 }
@@ -101,12 +110,12 @@ fun AuthLoginScreenContent(paddingValues: PaddingValues,navController: NavHostCo
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(70.dp)
-                        .clickable{
+                        .clickable {
                             navController.navigate(route = AuthScreen.Register.route)
 
                         },
                     contentAlignment = Alignment.Center
-                ){
+                ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Icon(
                             imageVector = Icons.Default.KeyboardArrowRight,
@@ -115,18 +124,8 @@ fun AuthLoginScreenContent(paddingValues: PaddingValues,navController: NavHostCo
                         )
                         Text("Registarte aqui")
                     }
-
-
                 }
-
-
-
             }
-
         }
     }
-
-
-
-
 }

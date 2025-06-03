@@ -38,10 +38,10 @@ import androidx.compose.ui.unit.sp
 import com.example.deliveryapp.R
 
 @Composable
-fun ProfileScreenContent(paddingValues: PaddingValues){
+fun ProfileScreenContent(paddingValues: PaddingValues) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-    Box (modifier = Modifier.fillMaxSize()){
+    Box(modifier = Modifier.fillMaxSize()) {
         Image(
             painter = painterResource(id = R.drawable.backgroun2),
             contentDescription = "",
@@ -50,122 +50,137 @@ fun ProfileScreenContent(paddingValues: PaddingValues){
         )
     }
 
-    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-        ElevatedCard(elevation = CardDefaults.cardElevation(
-            defaultElevation = 6.dp
-        ),
-            modifier = Modifier.padding(start = 20.dp, end = 20.dp).fillMaxWidth().height(500.dp)
+    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 6.dp
+            ),
+            modifier = Modifier
+                .padding(start = 20.dp, end = 20.dp)
+                .fillMaxWidth()
+                .height(500.dp)
         ) {
-           Column {
-               Text("Informacion del usuario",
-                   modifier = Modifier.padding(20.dp),
-                   fontWeight = FontWeight.Bold,
-                   fontSize = 25.sp
+            Column {
+                Text(
+                    "Informacion del usuario",
+                    modifier = Modifier.padding(20.dp),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 25.sp
 
-               )
-               Row(modifier = Modifier.padding(20.dp)) {
-                   Icon(
-                       imageVector = Icons.Default.Person,
-                       contentDescription = "",
-                       modifier = Modifier.size(60.dp)
-                   )
-                   Column {
-                       Text("Samuel Vazquez",
-                           modifier = Modifier.padding(2.dp),
-                           fontWeight = FontWeight.Bold,
-                           fontSize = 18.sp
-                       )
-                       Text("Nombre del usuario",
-                           modifier = Modifier.padding(2.dp),
-                           fontWeight = FontWeight.Normal,
-                           fontSize = 15.sp,
-                           color = Color.Gray
-                       )
-                   }
-               }
-               Row(modifier = Modifier.padding(20.dp)) {
-                   Icon(
-                       imageVector = Icons.Default.Email,
-                       contentDescription = "",
-                       modifier = Modifier.size(60.dp)
-                   )
-                   Column {
-                       Text("samu@gmail.com",
-                           modifier = Modifier.padding(2.dp),
-                           fontWeight = FontWeight.Bold,
-                           fontSize = 18.sp
-                       )
-                       Text("Correo Electronico",
-                           modifier = Modifier.padding(2.dp),
-                           fontWeight = FontWeight.Normal,
-                           fontSize = 15.sp,
-                           color = Color.Gray
-                       )
-                   }
-               }
-               Row(modifier = Modifier.padding(20.dp)) {
-                   Icon(
-                       imageVector = Icons.Default.Phone,
-                       contentDescription = "",
-                       modifier = Modifier.size(60.dp)
-                   )
-                   Column {
-                       Text("4549396544",
-                           modifier = Modifier.padding(2.dp),
-                           fontWeight = FontWeight.Bold,
-                           fontSize = 18.sp
-                       )
-                       Text("Telefono",
-                           modifier = Modifier.padding(2.dp),
-                           fontWeight = FontWeight.Normal,
-                           fontSize = 15.sp,
-                           color = Color.Gray
-                       )
-                   }
-               }
-               Button(
-                   onClick = {
+                )
+                Row(modifier = Modifier.padding(20.dp)) {
+                    Icon(
+                        imageVector = Icons.Default.Person,
+                        contentDescription = "",
+                        modifier = Modifier.size(60.dp)
+                    )
+                    Column {
+                        Text(
+                            "Samuel Vazquez",
+                            modifier = Modifier.padding(2.dp),
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 18.sp
+                        )
+                        Text(
+                            "Nombre del usuario",
+                            modifier = Modifier.padding(2.dp),
+                            fontWeight = FontWeight.Normal,
+                            fontSize = 15.sp,
+                            color = Color.Gray
+                        )
+                    }
+                }
+                Row(modifier = Modifier.padding(20.dp)) {
+                    Icon(
+                        imageVector = Icons.Default.Email,
+                        contentDescription = "",
+                        modifier = Modifier.size(60.dp)
+                    )
+                    Column {
+                        Text(
+                            "samu@gmail.com",
+                            modifier = Modifier.padding(2.dp),
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 18.sp
+                        )
+                        Text(
+                            "Correo Electronico",
+                            modifier = Modifier.padding(2.dp),
+                            fontWeight = FontWeight.Normal,
+                            fontSize = 15.sp,
+                            color = Color.Gray
+                        )
+                    }
+                }
+                Row(modifier = Modifier.padding(20.dp)) {
+                    Icon(
+                        imageVector = Icons.Default.Phone,
+                        contentDescription = "",
+                        modifier = Modifier.size(60.dp)
+                    )
+                    Column {
+                        Text(
+                            "4549396544",
+                            modifier = Modifier.padding(2.dp),
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 18.sp
+                        )
+                        Text(
+                            "Telefono",
+                            modifier = Modifier.padding(2.dp),
+                            fontWeight = FontWeight.Normal,
+                            fontSize = 15.sp,
+                            color = Color.Gray
+                        )
+                    }
+                }
+                Button(
+                    onClick = {
 
-                   },
-                   modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 20.dp).fillMaxWidth(),
-                   shape = RoundedCornerShape(2.dp),
-                   colors = ButtonDefaults.buttonColors(
-                       containerColor = Color.Black
-                   )
-               ) {
-                   Row {
-                       Icon(
-                           imageVector = Icons.Default.ArrowForward,
-                           contentDescription = ""
-                       )
-                       Text("Actualizar Informacion")
-                   }
-               }
-               Button(
-                   onClick = {
+                    },
+                    modifier = Modifier
+                        .padding(start = 20.dp, end = 20.dp, top = 20.dp)
+                        .fillMaxWidth(),
+                    shape = RoundedCornerShape(2.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color.Black
+                    )
+                ) {
+                    Row {
+                        Icon(
+                            imageVector = Icons.Default.ArrowForward,
+                            contentDescription = ""
+                        )
+                        Text("Actualizar Informacion")
+                    }
+                }
+                Button(
+                    onClick = {
 
-                   },
-                   modifier = Modifier.padding(start = 20.dp, end = 20.dp).fillMaxWidth(),
-                   shape = RoundedCornerShape(2.dp),
-                   colors = ButtonDefaults.buttonColors(
-                       containerColor = Color.Black
-                   )
-               ) {
-                   Row {
-                       Icon(
-                           imageVector = Icons.Default.Person,
-                           contentDescription = ""
-                       )
-                       Text("Seleccione su rol")
-                   }
-               }
-           }
+                    },
+                    modifier = Modifier
+                        .padding(start = 20.dp, end = 20.dp)
+                        .fillMaxWidth(),
+                    shape = RoundedCornerShape(2.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color.Black
+                    )
+                ) {
+                    Row {
+                        Icon(
+                            imageVector = Icons.Default.Person,
+                            contentDescription = ""
+                        )
+                        Text("Seleccione su rol")
+                    }
+                }
+            }
 
 
         }
 
     }
-    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter){
+    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.TopCenter) {
         Image(
             painter = painterResource(R.drawable.client),
             contentDescription = "",
@@ -174,8 +189,6 @@ fun ProfileScreenContent(paddingValues: PaddingValues){
 
 
     }
-
-
 
 
 }

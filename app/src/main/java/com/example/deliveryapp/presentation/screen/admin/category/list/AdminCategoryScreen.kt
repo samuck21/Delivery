@@ -6,7 +6,7 @@ import com.example.deliveryapp.presentation.screen.admin.category.list.componets
 
 @Composable
 
-fun AdminCategoryScreen(){
+fun AdminCategoryScreen() {
     Scaffold { paddingValues ->
         AdminCategoryScreenContent(paddingValues)
     }
