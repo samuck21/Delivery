@@ -6,8 +6,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.deliveryapp.presentation.navigation.Graph
 import com.example.deliveryapp.presentation.navigation.screen.AuthScreen
-import com.example.deliveryapp.screens.AuthLoginScreen
-import com.example.deliveryapp.screens.AuthRegisterScreen
+import com.example.deliveryapp.presentation.screen.login.AuthLoginScreen
+import com.example.deliveryapp.presentation.screen.register.AuthRegisterScreen
 
 fun NavGraphBuilder.AuthNavGraph(navController: NavHostController) {
 

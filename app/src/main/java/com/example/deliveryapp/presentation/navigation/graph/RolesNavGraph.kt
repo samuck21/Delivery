@@ -5,13 +5,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.deliveryapp.presentation.navigation.Graph
-import com.example.deliveryapp.presentation.navigation.screen.AuthScreen
 import com.example.deliveryapp.presentation.navigation.screen.RolesScreen
 import com.example.deliveryapp.presentation.screen.admin.home.AdminHomeScreen
 import com.example.deliveryapp.presentation.screen.client.home.ClientHomeScreen
-import com.example.deliveryapp.screens.AuthLoginScreen
-import com.example.deliveryapp.screens.AuthRegisterScreen
-import com.example.deliveryapp.screens.RolesScreen
+import com.example.deliveryapp.presentation.screen.roles.RolesScreen
 
 fun NavGraphBuilder.RolesNavGraph(navController: NavHostController) {
 

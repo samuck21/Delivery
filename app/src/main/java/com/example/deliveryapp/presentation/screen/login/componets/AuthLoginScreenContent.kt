@@ -1,4 +1,4 @@
-package com.example.deliveryapp.screens
+package com.example.deliveryapp.presentation.screen.login.componets
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -20,7 +20,6 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -35,7 +34,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.deliveryapp.presentation.navigation.Graph
+import com.example.deliveryapp.R
 import com.example.deliveryapp.presentation.navigation.screen.AuthScreen
 import com.example.deliveryapp.presentation.navigation.screen.RolesScreen
 
@@ -45,7 +44,7 @@ fun AuthLoginScreenContent(paddingValues: PaddingValues,navController: NavHostCo
     var password by remember { mutableStateOf("") }
     Box (modifier = Modifier.fillMaxSize()){
         Image(
-            painter = painterResource(id = com.example.deliveryapp.R.drawable.background),
+            painter = painterResource(id = R.drawable.background),
             contentDescription = "",
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize()

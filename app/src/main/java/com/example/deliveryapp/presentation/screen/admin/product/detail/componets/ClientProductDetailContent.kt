@@ -1,11 +1,6 @@
-package com.example.deliveryapp.screens
+package com.example.deliveryapp.presentation.screen.admin.product.detail.componets
 
-import android.graphics.drawable.Drawable
-import android.media.Image
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -13,10 +8,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -27,8 +20,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -37,6 +28,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.util.lerp
+import com.example.deliveryapp.R
 import kotlin.math.absoluteValue
 
 @Composable
@@ -44,9 +36,9 @@ import kotlin.math.absoluteValue
 fun ClientProductDetailContent(){
     Column(){
         val images = listOf(
-            com.example.deliveryapp.R.drawable.pizzapepperoni,
-            com.example.deliveryapp.R.drawable.restauran,
-            com.example.deliveryapp.R.drawable.background,
+            R.drawable.pizzapepperoni,
+            R.drawable.restauran,
+            R.drawable.background,
 
         )
 

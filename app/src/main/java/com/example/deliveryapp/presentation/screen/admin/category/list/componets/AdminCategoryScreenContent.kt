@@ -1,10 +1,9 @@
-package com.example.deliveryapp.screens
+package com.example.deliveryapp.presentation.screen.admin.category.list.componets
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -22,8 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.util.packInts
-import java.nio.file.WatchEvent
+import com.example.deliveryapp.R
 
 @Composable
 fun AdminCategoryScreenContent(paddingValues: PaddingValues){
@@ -42,7 +40,7 @@ fun AdminCategoryScreenContent(paddingValues: PaddingValues){
                     contentAlignment = Alignment.Center
                 ){
                     Image(
-                        painter = painterResource(com.example.deliveryapp.R.drawable.restauran),
+                        painter = painterResource(R.drawable.restauran),
                         contentDescription = "",
                         contentScale = ContentScale.Crop,
                         modifier = Modifier.fillMaxSize()

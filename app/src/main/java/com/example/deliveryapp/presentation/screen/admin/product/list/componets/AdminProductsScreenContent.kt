@@ -1,4 +1,4 @@
-package com.example.deliveryapp.screens
+package com.example.deliveryapp.presentation.screen.admin.product.list.componets
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -31,8 +30,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.util.packInts
-import java.nio.file.WatchEvent
+import com.example.deliveryapp.R
 
 @Composable
 fun AdminProductsScreenContent(paddingValues: PaddingValues){
@@ -51,7 +49,7 @@ fun AdminProductsScreenContent(paddingValues: PaddingValues){
 
                 ){
                     Image(
-                        painter = painterResource(com.example.deliveryapp.R.drawable.pizzapepperoni),
+                        painter = painterResource(R.drawable.pizzapepperoni),
                         contentDescription = "",
                         contentScale = ContentScale.Crop,
                         modifier = Modifier.fillMaxSize()
@@ -137,7 +135,7 @@ fun AdminProductsScreenContent(paddingValues: PaddingValues){
 
                 ){
                     Image(
-                        painter = painterResource(com.example.deliveryapp.R.drawable.pizzapepperoni),
+                        painter = painterResource(R.drawable.pizzapepperoni),
                         contentDescription = "",
                         contentScale = ContentScale.Crop,
                         modifier = Modifier.fillMaxSize()
