@@ -1,6 +1,7 @@
 package com.example.deliveryapp.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -33,9 +34,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import com.example.deliveryapp.presentation.navigation.Graph
+import com.example.deliveryapp.presentation.navigation.screen.AuthScreen
+import com.example.deliveryapp.presentation.navigation.screen.RolesScreen
 
 @Composable
-fun AuthLoginScreenContent(paddingValues: PaddingValues){
+fun AuthLoginScreenContent(paddingValues: PaddingValues,navController: NavHostController){
   var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     Box (modifier = Modifier.fillMaxSize()){
@@ -82,6 +87,7 @@ fun AuthLoginScreenContent(paddingValues: PaddingValues){
                 Button(
                     shape = RoundedCornerShape(4.dp),
                     onClick = {
+                        navController.navigate(route = RolesScreen.Roles.route)
 
                     },
                     colors = ButtonDefaults.buttonColors(
@@ -95,7 +101,11 @@ fun AuthLoginScreenContent(paddingValues: PaddingValues){
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(70.dp),
+                        .height(70.dp)
+                        .clickable{
+                            navController.navigate(route = AuthScreen.Register.route)
+
+                        },
                     contentAlignment = Alignment.Center
                 ){
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {

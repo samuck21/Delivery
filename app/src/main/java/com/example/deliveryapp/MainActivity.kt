@@ -11,6 +11,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.example.deliveryapp.presentation.navigation.graph.RootNavGraph
 import com.example.deliveryapp.screens.AdminCategoryScreen
 import com.example.deliveryapp.screens.AdminCreateCategoryScreen
 import com.example.deliveryapp.screens.AdminProductsScreen
@@ -22,13 +26,15 @@ import com.example.deliveryapp.screens.RolesScreen
 import com.example.deliveryapp.ui.theme.DeliveryAppTheme
 
 class MainActivity : ComponentActivity() {
+    private  lateinit var navController: NavHostController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             DeliveryAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ClientProductDetailScreen()
+                    navController = rememberNavController()
+                    RootNavGraph(navController = navController)
                 }
             }
         }

@@ -1,6 +1,7 @@
 package com.example.deliveryapp.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -37,9 +38,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import com.example.deliveryapp.presentation.navigation.Graph
 
 @Composable
-fun RolesScreenContent(paddingValues: PaddingValues){
+fun RolesScreenContent(paddingValues: PaddingValues,navController: NavHostController){
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     Box (modifier = Modifier.fillMaxSize()){
@@ -68,6 +71,9 @@ fun RolesScreenContent(paddingValues: PaddingValues){
                     .weight(1f)
                     .height(250.dp)
                     .padding(end = 10.dp)
+                    .clickable{
+                        navController.navigate(route = Graph.ADMIN)
+                    }
                 ) {
 
                     Column(Modifier.fillMaxSize()) {
@@ -98,6 +104,9 @@ fun RolesScreenContent(paddingValues: PaddingValues){
                     .height(250.dp)
                     .padding(start = 10.dp
                     )
+                    .clickable{
+                        navController.navigate(route = Graph.CLIENT)
+                    }
                 ) {
                     Column(Modifier.fillMaxSize()) {
                         Image(
