@@ -33,7 +33,7 @@ import kotlin.math.absoluteValue
 
 @Composable
 
-fun ClientProductDetailContent(){
+fun AdminProductDetailContent(){
     Column(){
         val images = listOf(
             R.drawable.pizzapepperoni,

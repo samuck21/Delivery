@@ -35,10 +35,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.deliveryapp.R
+import com.example.deliveryapp.presentation.navigation.screen.admin.AdminCategoryScreen
 
 @Composable
-fun ProfileScreenContent(paddingValues: PaddingValues) {
+fun ProfileScreenContent(paddingValues: PaddingValues,navController: NavHostController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     Box(modifier = Modifier.fillMaxSize()) {
@@ -136,6 +138,7 @@ fun ProfileScreenContent(paddingValues: PaddingValues) {
                 }
                 Button(
                     onClick = {
+
 
                     },
                     modifier = Modifier

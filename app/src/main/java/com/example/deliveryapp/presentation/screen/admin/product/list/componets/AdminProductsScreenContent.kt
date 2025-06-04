@@ -2,6 +2,7 @@ package com.example.deliveryapp.presentation.screen.admin.product.list.componets
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -30,18 +31,30 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.deliveryapp.R
+import com.example.deliveryapp.presentation.navigation.screen.admin.AdminCategoryScreen
+import com.example.deliveryapp.presentation.navigation.screen.admin.AdminProductsScreen
 
 @Composable
-fun AdminProductsScreenContent(paddingValues: PaddingValues){
+fun AdminProductsScreenContent(paddingValues: PaddingValues,navController: NavHostController){
 
-    Column(modifier = Modifier.padding(20.dp)) {
-        Row {
+    Column(modifier = Modifier.padding(paddingValues)) {
+        Row (
+            modifier = Modifier.padding( 10.dp)
+        ) {
             ElevatedCard(
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 10.dp
                 ),
-                modifier = Modifier.weight(1f).height(200.dp).padding(end = 5.dp)
+                modifier = Modifier
+                    .weight(1f)
+                    .height(200.dp)
+                    .padding(end = 5.dp)
+                    .clickable{
+                        navController.navigate(route = AdminProductsScreen.ProductDetail.route)
+
+                    }
 
             ) {
                 Box(modifier = Modifier
@@ -84,6 +97,9 @@ fun AdminProductsScreenContent(paddingValues: PaddingValues){
                             .size(50.dp)
                             .padding(10.dp)
                             .clip(shape = CircleShape)
+                            .clickable{
+                                navController.navigate(route = AdminCategoryScreen.ProductUpdate.route)
+                            }
                         ){
                             Box(modifier = Modifier
                                 .fillMaxSize()
@@ -103,6 +119,9 @@ fun AdminProductsScreenContent(paddingValues: PaddingValues){
                             .size(50.dp)
                             .padding(10.dp)
                             .clip(shape = CircleShape)
+                            .clickable{
+                               // navController.navigate(route = AdminCategoryScreen.D.route)
+                            }
                         ){
                             Box(modifier = Modifier
                                 .fillMaxSize()

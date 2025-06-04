@@ -2,13 +2,13 @@ package com.example.deliveryapp.presentation.screen.admin.product.detail
 
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import com.example.deliveryapp.presentation.screen.admin.product.detail.componets.ClientProductDetailContent
+import com.example.deliveryapp.presentation.screen.admin.product.detail.componets.AdminProductDetailContent
 
 @Composable
 
-fun ClientProductDetailScreen(){
+fun AdminProductDetailScreen(){
     Scaffold { paddingValues ->
-        ClientProductDetailContent()
+        AdminProductDetailContent()
     }
 
 }

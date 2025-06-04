@@ -1,6 +1,7 @@
 package com.example.deliveryapp.presentation.screen.admin.category.list.componets
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -21,12 +22,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.deliveryapp.R
+import com.example.deliveryapp.presentation.navigation.screen.admin.AdminCategoryScreen
 
 @Composable
-fun AdminCategoryScreenContent(paddingValues: PaddingValues) {
+fun AdminCategoryScreenContent(paddingValues: PaddingValues,navController:NavHostController) {
 
-    Column(modifier = Modifier.padding(20.dp)) {
+    Column(modifier = Modifier.padding(paddingValues)) {
         ElevatedCard(
             elevation = CardDefaults.cardElevation(
                 defaultElevation = 10.dp
@@ -34,6 +37,11 @@ fun AdminCategoryScreenContent(paddingValues: PaddingValues) {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(200.dp)
+                .padding(top = 10.dp, start = 20.dp, end = 20.dp)
+                .clickable{
+                    navController.navigate(route = AdminCategoryScreen.ProductList.route)
+
+                }
 
         ) {
             Box(

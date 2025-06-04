@@ -30,6 +30,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.deliveryapp.R
 import com.example.deliveryapp.presentation.navigation.Graph
+import com.example.deliveryapp.presentation.navigation.graph.admin.AdminNavGraph
+import com.example.deliveryapp.presentation.navigation.screen.admin.AdminScreen
 
 @Composable
 fun RolesScreenContent(paddingValues: PaddingValues,navController: NavHostController){
@@ -62,7 +64,12 @@ fun RolesScreenContent(paddingValues: PaddingValues,navController: NavHostContro
                     .height(250.dp)
                     .padding(end = 10.dp)
                     .clickable{
-                        navController.navigate(route = Graph.ADMIN)
+
+                        navController.navigate(route = Graph.ADMIN){
+                            popUpTo(route = Graph.ROLES){
+                                inclusive = true
+                            }
+                        }
                     }
                 ) {
 

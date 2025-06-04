@@ -19,17 +19,17 @@ import com.example.deliveryapp.presentation.navigation.screen.admin.AdminScreen
 @Composable
 fun RowScope.AdminBottomBarItem(
     screen: AdminScreen,
-    currentDestination: NavDestination?,
+    currenDestination: NavDestination?,
     navController: NavHostController
 ){
     BottomNavigationItem(
-     label = {
-         Text(text = screen.title)
-     } ,
+        label = {
+            androidx.compose.material.Text(text = screen.title)
+        },
         icon = {
             Icon(imageVector = screen.icon, contentDescription = "")
         },
-        selected = currentDestination?.hierarchy?.any{
+        selected = currenDestination?.hierarchy?.any{
             it.route == screen.route
         } ==true,
         unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled),
@@ -39,6 +39,7 @@ fun RowScope.AdminBottomBarItem(
             }
         },
         modifier = Modifier.background(Color.Black)
+
 
     )
 

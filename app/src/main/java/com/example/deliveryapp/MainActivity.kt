@@ -13,6 +13,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.deliveryapp.presentation.navigation.graph.RootNavGraph
+import com.example.deliveryapp.presentation.navigation.graph.admin.AdminNavGraph
+import com.example.deliveryapp.presentation.screen.admin.home.AdminHomeScreen
 import com.example.deliveryapp.ui.theme.DeliveryAppTheme
 
 class MainActivity : ComponentActivity() {

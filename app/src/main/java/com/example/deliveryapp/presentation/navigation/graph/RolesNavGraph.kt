@@ -20,7 +20,7 @@ fun NavGraphBuilder.RolesNavGraph(navController: NavHostController) {
             RolesScreen(navController)
         }
         composable (route = Graph.ADMIN) {
-            AdminHomeScreen(navController)
+            AdminHomeScreen()
         }
         composable (route = Graph.CLIENT){
             ClientHomeScreen(navController)
