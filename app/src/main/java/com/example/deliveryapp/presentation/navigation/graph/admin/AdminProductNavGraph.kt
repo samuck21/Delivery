@@ -15,7 +15,7 @@ fun NavGraphBuilder. AdminProductNavGraph(navController: NavHostController){
         startDestination = AdminProductsScreen.ProductDetail.route
     ){
         composable  (route = AdminProductsScreen.ProductDetail.route){
-            AdminProductDetailScreen()
+            AdminProductDetailScreen(navController)
         }
 
     }

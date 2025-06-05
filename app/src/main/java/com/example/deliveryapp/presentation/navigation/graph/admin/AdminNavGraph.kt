@@ -7,7 +7,7 @@ import androidx.navigation.compose.composable
 import com.example.deliveryapp.presentation.navigation.Graph
 import com.example.deliveryapp.presentation.navigation.screen.admin.AdminScreen
 import com.example.deliveryapp.presentation.screen.admin.category.list.AdminCategoryScreen
-import com.example.deliveryapp.presentation.screen.admin.order.AdminOrderListScreen
+import com.example.deliveryapp.presentation.screen.admin.order.paid.AdminOrderListScreen
 import com.example.deliveryapp.presentation.screen.profile.ProfileScreen
 
 @Composable

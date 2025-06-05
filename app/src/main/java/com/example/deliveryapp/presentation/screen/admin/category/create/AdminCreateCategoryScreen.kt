@@ -8,7 +8,7 @@ import com.example.deliveryapp.presentation.screen.admin.category.create.compone
 @Composable
 fun AdminCreateCategoryScreen(navController: NavHostController) {
     Scaffold { paddingValues ->
-        AdminCreateCategoryScreenContent(paddingValues)
+        AdminCreateCategoryScreenContent(paddingValues,navController)
     }
 
 }

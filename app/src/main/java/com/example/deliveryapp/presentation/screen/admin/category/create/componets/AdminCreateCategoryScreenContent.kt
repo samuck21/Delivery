@@ -1,6 +1,7 @@
 package com.example.deliveryapp.presentation.screen.admin.category.create.componets
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -36,10 +37,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.deliveryapp.R
 
 @Composable
-fun AdminCreateCategoryScreenContent(paddingValues: PaddingValues){
+fun AdminCreateCategoryScreenContent(paddingValues: PaddingValues,navController: NavHostController){
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     Box (modifier = Modifier.fillMaxSize()){
@@ -48,6 +50,18 @@ fun AdminCreateCategoryScreenContent(paddingValues: PaddingValues){
             contentDescription = "",
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize()
+        )
+        Icon(
+            imageVector = Icons.Default.KeyboardArrowLeft,
+            contentDescription = "",
+            modifier = Modifier
+                .size(80.dp)
+                .align(Alignment.TopStart)
+                .padding(20.dp)
+                .clickable{
+                    navController.popBackStack()
+                },
+            tint = Color.White
         )
     }
 
@@ -119,7 +133,7 @@ fun AdminCreateCategoryScreenContent(paddingValues: PaddingValues){
 
                     Button(
                         onClick = {
-
+                          navController.popBackStack()
                         },
                         modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 10.dp).fillMaxWidth(),
                         shape = RoundedCornerShape(5.dp),

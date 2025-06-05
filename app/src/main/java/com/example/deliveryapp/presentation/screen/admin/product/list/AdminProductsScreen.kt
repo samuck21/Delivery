@@ -49,6 +49,7 @@ fun AdminProductsScreen(navController: NavHostController){
                         .padding(start = 10.dp, top = 20.dp)
                         .align(Alignment.TopStart)
                         .clickable{
+                            navController.popBackStack()
 
                         },
 

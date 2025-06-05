@@ -1,26 +1,41 @@
 package com.example.deliveryapp.presentation.screen.admin.product.detail.componets
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.input.pointer.motionEventSpy
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -33,20 +48,20 @@ import kotlin.math.absoluteValue
 
 @Composable
 
-fun AdminProductDetailContent(){
-    Column(){
+fun AdminProductDetailContent() {
+    Column() {
         val images = listOf(
             R.drawable.pizzapepperoni,
             R.drawable.restauran,
             R.drawable.background,
 
-        )
+            )
 
         val pagerState = rememberPagerState(pageCount = {
-           images.size
+            images.size
         })
         HorizontalPager(state = pagerState) { page ->
-            Card (
+            Card(
                 Modifier
                     .size(420.dp)
                     .graphicsLayer {
@@ -67,70 +82,188 @@ fun AdminProductDetailContent(){
                     }
             ) {
 
-                    Image(painter = painterResource(id = images[page])
-                        , contentDescription = "",
-                        modifier = Modifier.fillMaxSize(),
-                        contentScale = ContentScale.Crop)
+                Image(
+                    painter = painterResource(id = images[page]), contentDescription = "",
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Crop
+                )
 
 
             }
         }
 
-        Column (modifier = Modifier.weight(2f).padding(20.dp)) {
-            Text("Jugo de Guabana",
-            fontSize = 25.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(bottom = 20.dp))
-            Text("DESCRIPCION",
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Black,
-                modifier = Modifier.padding(bottom = 6.dp))
-            Text("200 mil de jugo natural",
-                fontSize = 18.sp,
-                modifier = Modifier)
-        }
-        Spacer(modifier = Modifier.weight(2f))
-
-
-        Row(modifier = Modifier.fillMaxWidth().padding(20.dp), verticalAlignment = Alignment.CenterVertically){
-            Button(
-                onClick = {},
-                modifier = Modifier.weight(1f),
-                shape = (RoundedCornerShape(200.dp))
-            ) {
+        Column(
+            modifier = Modifier
+                .weight(2f)
+                .padding(20.dp)
+                .verticalScroll(rememberScrollState())
+        ) {
+            Row {
+                Text(
+                    "PIZZA DE PEPERONI",
+                    fontSize = 30.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(bottom = 20.dp)
+                )
                 Icon(
-                    imageVector = Icons.Default.Add,
+                    imageVector = Icons.Default.Edit,
                     contentDescription = "",
-                    modifier = Modifier.size(30.dp).fillMaxSize()
+                    modifier = Modifier
+                        .size(30.dp)
+                        .clickable {
+
+                        },
+                    tint = Color.Blue
                 )
             }
-            Text("0",
-                modifier = Modifier.weight(1f).fillMaxWidth(),
-                textAlign = TextAlign.Center
+            Row {
+                Text(
+                    "$300.34",
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                )
+                Icon(
+                    imageVector = Icons.Default.Edit,
+                    contentDescription = "",
+                    modifier = Modifier
+                        .size(30.dp)
+                        .clickable {
+
+                        },
+                    tint = Color.Blue
+                )
+            }
+
+
+            Text(
+                "Deliosa pizza de peperoni con orilla rellena de queso philadelpia.",
+                fontSize = 18.sp,
+                modifier = Modifier
+            )
+            Text(
+                "Editar descripcion",
+                fontSize = 18.sp,
+                color = Color.Blue,
+                modifier = Modifier
+                    .clickable {
+
+                    }
             )
 
-            Button(
-                onClick = {},
-                modifier = Modifier.weight(1f),
-                shape = (RoundedCornerShape(200.dp))
+            OutlinedCard(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 20.dp, bottom = 20.dp)
+                    .height(100.dp)
             ) {
-                Text("+")
-            }
-            Spacer(modifier = Modifier.weight(2f))
-            Text("4000.00",
-                modifier = Modifier.weight(2f))
-        }
-        Button(
-            onClick = {
 
-            },
-            shape = RoundedCornerShape(5.dp),
-            modifier = Modifier.padding(20.dp).fillMaxWidth()
-        ) {
-            Text("Agregar Poducto")
+
+                Row(
+                    modifier = Modifier.fillMaxSize(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Column(modifier = Modifier.weight(4f)) {
+                        Text("Costo de envio: MXN 39")
+                        Text("Costo de total: MXN 39")
+
+                    }
+                    Divider(
+                        modifier = Modifier
+                            .weight(0.1f)
+                            .padding(top = 20.dp, bottom = 20.dp)
+                            .fillMaxHeight()
+                    )
+
+                    Column(modifier = Modifier.weight(4f)) {
+                        Text("20 min")
+                        Text("Tiempo de llegado")
+                    }
+
+                }
+
+
+            }
+            OutlinedCard(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 20.dp, bottom = 20.dp)
+                    .height(50.dp)
+            ) {
+                Row(modifier = Modifier.padding(10.dp)) {
+                    Text(
+                        "INGREDIENTES",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 20.sp,
+                        modifier = Modifier.weight(6f)
+
+                    )
+                    Icon(
+                        imageVector = Icons.Default.KeyboardArrowDown,
+                        contentDescription = "",
+                        modifier = Modifier
+                            .size(50.dp)
+                            .weight(1f)
+                    )
+                }
+
+
+            }
+
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text("Cantidad:")
+
+                Box(
+                    modifier = Modifier
+                        .size(height = 40.dp, width = 120.dp)
+                        .clip(shape = RoundedCornerShape(30.dp))
+
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(Color.LightGray),
+                    ) {
+                        Row(
+                            modifier = Modifier.fillMaxSize(),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text(
+                                "-",
+                                textAlign = TextAlign.Center,
+                                fontSize = 30.sp,
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .fillMaxWidth()
+
+                            )
+                            Text(
+                                "1",
+                                textAlign = TextAlign.Center,
+                                fontSize = 25.sp,
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .fillMaxWidth()
+                            )
+                            Text(
+                                "+",
+                                textAlign = TextAlign.Center,
+                                fontSize = 30.sp,
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .fillMaxWidth()
+                            )
+                        }
+                    }
+
+                }
+
+
+            }
+            Spacer(modifier = Modifier.height(40.dp))
+
         }
 
 
     }
-
 }
