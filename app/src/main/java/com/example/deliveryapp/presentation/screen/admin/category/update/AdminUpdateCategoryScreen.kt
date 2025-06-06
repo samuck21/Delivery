@@ -1,10 +1,16 @@
 package com.example.deliveryapp.presentation.screen.admin.category.update
 
-import androidx.compose.material.Text
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import com.example.deliveryapp.presentation.screen.admin.category.update.componets.AdminUpdateCategoryContent
+
 
 @Composable
 fun AdminUpdateCategoryScreen(navController: NavHostController) {
-    Text("AdminUpdateCategoryScreen")
+    Scaffold(
+
+    ){ paddingValues ->
+        AdminUpdateCategoryContent(paddingValues,navController)
+    }
 }

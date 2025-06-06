@@ -13,7 +13,7 @@ import com.example.deliveryapp.presentation.screen.admin.home.components.AdminBo
 fun AdminHomeScreen(navController: NavHostController = rememberNavController()){
     Scaffold (
         bottomBar = {
-        AdminBottomBar(navController = navController)
+            AdminBottomBar(navController = navController)
         },
     ) {  paddingValues ->
        AdminNavGraph(navController = navController)

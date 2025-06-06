@@ -1,4 +1,4 @@
-package com.example.deliveryapp.presentation.screen.admin.home.components
+package com.example.deliveryapp.presentation.screen.client.home.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.RowScope
@@ -14,10 +14,11 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import com.example.deliveryapp.presentation.navigation.screen.admin.AdminScreen
+import com.example.deliveryapp.presentation.navigation.screen.client.ClientScreen
 
 @Composable
-fun RowScope.AdminBottomBarItem(
-    screen: AdminScreen,
+fun RowScope.ClientBottomBarItem(
+    screen: ClientScreen,
     currenDestination: NavDestination?,
     navController: NavHostController
 ){

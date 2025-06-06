@@ -12,6 +12,7 @@ import com.example.deliveryapp.presentation.screen.admin.product.create.AdminPro
 import com.example.deliveryapp.presentation.screen.admin.product.list.AdminProductsScreen
 import com.example.deliveryapp.presentation.screen.admin.product.update.AdminProductUpdateScreen
 
+
 fun NavGraphBuilder.AdminCategoryNavGraph(navController: NavHostController){
     navigation (
         route= Graph.ADMIN_CATEGORY,

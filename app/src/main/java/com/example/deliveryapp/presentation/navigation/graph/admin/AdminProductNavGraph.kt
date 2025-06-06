@@ -8,6 +8,7 @@ import com.example.deliveryapp.presentation.navigation.Graph
 import com.example.deliveryapp.presentation.navigation.screen.admin.AdminProductsScreen
 import com.example.deliveryapp.presentation.screen.admin.product.detail.AdminProductDetailScreen
 
+
 fun NavGraphBuilder. AdminProductNavGraph(navController: NavHostController){
 
     navigation(

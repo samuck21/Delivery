@@ -1,4 +1,4 @@
-package com.example.deliveryapp.presentation.screen.admin.category.list
+package com.example.deliveryapp.presentation.screen.client.category.list
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -22,12 +22,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.deliveryapp.presentation.navigation.Graph
-import com.example.deliveryapp.presentation.screen.admin.category.list.componets.AdminCategoryScreenContent
-
+import com.example.deliveryapp.presentation.screen.client.category.list.componets.ClientCategoryScreenContent
 
 @Composable
 
-fun AdminCategoryScreen(navController: NavHostController) {
+fun ClientCategoryScreen(navController: NavHostController) {
     Scaffold(
         topBar = {
             Box(
@@ -71,7 +70,7 @@ fun AdminCategoryScreen(navController: NavHostController) {
         }
 
     ) { paddingValues ->
-        AdminCategoryScreenContent(paddingValues, navController)
+        ClientCategoryScreenContent(paddingValues, navController)
     }
 
 }

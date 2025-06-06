@@ -1,4 +1,4 @@
-package com.example.deliveryapp.presentation.screen.admin.product.detail.componets
+package com.example.deliveryapp.presentation.screen.client.product.detail.componets
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -44,7 +44,7 @@ import kotlin.math.absoluteValue
 
 @Composable
 
-fun AdminProductDetailContent() {
+fun ClientProductDetailContent() {
     Column() {
         val images = listOf(
             R.drawable.pizzapepperoni,

@@ -1,4 +1,4 @@
-package com.example.deliveryapp.presentation.screen.admin.product.detail
+package com.example.deliveryapp.presentation.screen.client.product.detail
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
@@ -20,12 +20,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.example.deliveryapp.presentation.screen.admin.product.detail.componets.AdminProductDetailContent
-
+import com.example.deliveryapp.presentation.screen.client.product.detail.componets.ClientProductDetailContent
 
 @Composable
 
-fun AdminProductDetailScreen(navController: NavHostController){
+fun ClientProductDetailScreen(navController: NavHostController){
     Scaffold (
         topBar = {
             Row (modifier = Modifier.padding(top = 30.dp)){
@@ -68,7 +67,7 @@ fun AdminProductDetailScreen(navController: NavHostController){
         }
 
     ) { paddingValues ->
-        AdminProductDetailContent()
+        ClientProductDetailContent()
     }
 
 }

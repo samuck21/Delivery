@@ -1,4 +1,4 @@
-package com.example.deliveryapp.presentation.screen.admin.category.list.componets
+package com.example.deliveryapp.presentation.screen.client.category.list.componets
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -33,9 +33,11 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.deliveryapp.R
 import com.example.deliveryapp.presentation.navigation.screen.admin.AdminCategoryScreen
+import com.example.deliveryapp.presentation.navigation.screen.client.ClientCategoryScreen
+import com.example.deliveryapp.presentation.screen.client.category.list.ClientCategoryScreen
 
 @Composable
-fun AdminCategoryScreenContent(paddingValues: PaddingValues, navController: NavHostController) {
+fun ClientCategoryScreenContent(paddingValues: PaddingValues, navController: NavHostController) {
 
     Column(modifier = Modifier.padding(paddingValues)) {
         ElevatedCard(
@@ -47,7 +49,7 @@ fun AdminCategoryScreenContent(paddingValues: PaddingValues, navController: NavH
                 .height(200.dp)
                 .padding(top = 10.dp, start = 20.dp, end = 20.dp)
                 .clickable {
-                    navController.navigate(route = AdminCategoryScreen.ProductList.route)
+                    navController.navigate(route = ClientCategoryScreen.ProductList.route)
 
                 }
 
@@ -72,63 +74,6 @@ fun AdminCategoryScreenContent(paddingValues: PaddingValues, navController: NavH
                     color = Color.White
 
                 )
-                Column(modifier = Modifier.align(Alignment.TopEnd)) {
-                    Box(
-                        modifier = Modifier
-                            .background(Color.Transparent)
-                            .size(50.dp)
-                            .padding(10.dp)
-                            .clip(shape = CircleShape)
-                    ) {
-                        Box(
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .background(Color.Green)
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.Edit,
-                                contentDescription = "",
-                                tint = Color.Black,
-                                modifier = Modifier
-                                    .size(30.dp)
-                                    .clickable {
-                                        navController.navigate(
-                                            route = AdminCategoryScreen.CategoryUpdate.route
-                                        )
-
-                                    }
-                            )
-                        }
-
-
-                    }
-                    Box(
-                        modifier = Modifier
-                            .background(Color.Transparent)
-                            .size(50.dp)
-                            .padding(10.dp)
-                            .clip(shape = CircleShape)
-                    ) {
-                        Box(
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .background(Color.Red)
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.Delete,
-                                contentDescription = "",
-                                tint = Color.Black,
-                                modifier = Modifier
-                                    .size(30.dp)
-                                    .clickable {
-
-                                    }
-                            )
-                        }
-
-
-                    }
-                }
             }
 
 

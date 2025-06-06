@@ -1,4 +1,4 @@
-package com.example.deliveryapp.presentation.screen.admin.order.paid
+package com.example.deliveryapp.presentation.screen.client.order.paid
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -15,12 +15,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.example.deliveryapp.presentation.screen.admin.order.paid.components.AdminOrderPaidListContent
-
+import com.example.deliveryapp.presentation.screen.client.order.paid.components.ClientOrderPaidListContent
 
 @Composable
 
-fun AdminOrderListScreen(navController: NavHostController) {
+fun ClientOrderListScreen(navController: NavHostController) {
     Scaffold(
         topBar = {
             Row(
@@ -91,7 +90,7 @@ fun AdminOrderListScreen(navController: NavHostController) {
             }
         }
     ) { paddindValues ->
-        AdminOrderPaidListContent(paddindValues)
+        ClientOrderPaidListContent(paddindValues)
 
     }
 
