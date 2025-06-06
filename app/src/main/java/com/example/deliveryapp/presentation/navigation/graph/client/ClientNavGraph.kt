@@ -33,6 +33,7 @@ fun ClientNavGraph(navController: NavHostController){
         }
         ClientCategoryNavGraph(navController)
         ClientProductNavGraph(navController)
+        ClientShoppingBagNavGraph(navController)
 
     }
 }

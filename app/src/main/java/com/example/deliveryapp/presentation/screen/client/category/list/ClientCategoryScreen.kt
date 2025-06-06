@@ -1,6 +1,7 @@
 package com.example.deliveryapp.presentation.screen.client.category.list
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.deliveryapp.presentation.navigation.Graph
+import com.example.deliveryapp.presentation.navigation.screen.client.ClientShoppingBagScreen
 import com.example.deliveryapp.presentation.screen.client.category.list.componets.ClientCategoryScreenContent
 
 @Composable
@@ -47,7 +49,12 @@ fun ClientCategoryScreen(navController: NavHostController) {
                         imageVector = Icons.Default.ShoppingCart,
                         contentDescription = "",
                         tint = Color.White,
-                        modifier = Modifier.size(30.dp).weight(1f)
+                        modifier = Modifier
+                            .size(30.dp)
+                            .weight(1f)
+                            .clickable{
+                                navController.navigate(route = ClientShoppingBagScreen.ShoppingBag.route)
+                            }
                     )
 
                 }
